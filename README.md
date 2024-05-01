@@ -1,2 +1,2 @@
 # Django-CRM
-CRM System
+Develop a CRM system as a web application for client management

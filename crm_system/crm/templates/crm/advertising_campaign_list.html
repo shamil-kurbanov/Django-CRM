@@ -7,7 +7,7 @@
     <h2>Advertising Campaigns</h2>
     <ul>
         {% for campaign in campaigns %}
-            <li><a href="{% url 'advertising_campaign_detail' campaign.pk %}">{{ campaign.name }}</a></li>
+            <li><a href="{% url 'crm:advertising_campaign_detail' campaign.pk %}">{{ campaign.name }}</a></li>
         {% empty %}
             <li>No advertising campaigns found.</li>
         {% endfor %}

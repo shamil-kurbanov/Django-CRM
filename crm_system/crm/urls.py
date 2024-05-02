@@ -17,6 +17,7 @@ from .views import (ServiceViewSet,
                     advertising_campaign_delete,
                     potential_client_list, potential_client_create, potential_client_update, potential_client_delete,
                     contract_list, contract_create, contract_update, contract_delete, contract_detail,
+                    advertising_campaign_detail,
                     )
 from django.contrib.auth import views as auth_views
 
@@ -26,6 +27,8 @@ router = routers.DefaultRouter()
 # router.register(r'potential_clients', PotentialClientViewSet)
 # router.register(r'contracts', ContractViewSet)
 # router.register(r'active_clients', ActiveClientViewSet)
+
+app_name = 'crm'
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -37,6 +40,7 @@ urlpatterns = [
     path('services/<int:pk>/delete/', service_delete, name='service_delete'),
     path('advertising-campaigns/', advertising_campaign_list, name='advertising_campaign_list'),
     path('advertising-campaigns/create/', advertising_campaign_create, name='advertising_campaign_create'),
+    path('advertising-campaigns/<int:pk>/', advertising_campaign_detail, name='advertising_campaign_detail'),
     path('advertising-campaigns/<int:pk>/update/', advertising_campaign_update, name='advertising_campaign_update'),
     path('advertising-campaigns/<int:pk>/delete/', advertising_campaign_delete, name='advertising_campaign_delete'),
     path('contracts/', contract_list, name='contract_list'),

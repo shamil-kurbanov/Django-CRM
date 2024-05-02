@@ -90,6 +90,14 @@ def advertising_campaign_create(request):
         form = AdvertisingCampaignForm()
     return render(request, 'crm/advertising_campaign_create.html', {'form': form})
 
+@login_required
+def advertising_campaign_detail(request, pk):
+    # Retrieve the advertising campaign object or return a 404 error if not found
+    advertising_campaign = get_object_or_404(AdvertisingCampaign, pk=pk)
+
+    # Pass the advertising campaign object to the template
+    return render(request, 'crm/advertising_campaign_detail.html', {'advertising_campaign': advertising_campaign})
+
 
 @login_required
 def advertising_campaign_update(request, pk):

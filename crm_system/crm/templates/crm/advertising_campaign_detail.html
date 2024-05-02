@@ -1,0 +1,13 @@
+{% extends 'crm/base.html' %}
+
+{% block title %}
+    <title>Advertising Campaign Detail</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Advertising Campaign Detail</h1>
+    <p>Campaign Name: {{ advertising_campaign.name }}</p>
+    <p>Description: {{ advertising_campaign.description }}</p>
+    <p>Start Date: {{ advertising_campaign.start_date }}</p>
+    <p>End Date: {{ advertising_campaign.end_date }}</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- templates/potential_client_list.html -->
+{% extends 'crm/base.html' %}
+
+
+{% block title %}Potential Client List{% endblock %}
+
+{% block content %}
+    <h2>Potential Client List</h2>
+    <ul>
+        {% for potential_client in potential_clients %}
+            <li><a href="{% url 'potential_client_detail' potential_client.pk %}">{{ potential_client.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

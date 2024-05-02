@@ -1,0 +1,15 @@
+<!-- service_create.html -->
+{% extends 'crm/base.html' %}
+
+{% block title %}
+	Create Service
+{% endblock %}
+
+{% block content %}
+    <h2>Create Service</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

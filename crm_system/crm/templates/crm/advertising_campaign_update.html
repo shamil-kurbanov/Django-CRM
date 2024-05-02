@@ -1,0 +1,14 @@
+{% extends 'crm/base.html' %}
+
+{% block title %}
+	Update Advertising Campaign
+{% endblock %}
+
+{% block content %}
+    <h2>Update Advertising Campaign</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Campaign</button>
+    </form>
+{% endblock %}

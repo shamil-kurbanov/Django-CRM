@@ -1,0 +1,13 @@
+<!-- contract_update.html -->
+{% extends 'crm/base.html' %}
+
+{% block title %}Update Contract{% endblock %}
+
+{% block content %}
+    <h2>Update Contract</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Contract</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- contract_delete.html -->
+{% extends 'crm/base.html' %}
+
+{% block title %}Delete Contract{% endblock %}
+
+{% block content %}
+    <h2>Delete Contract</h2>
+    <p>Are you sure you want to delete the contract "{{ contract.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'contract_list' %}">Cancel</a>
+{% endblock %}

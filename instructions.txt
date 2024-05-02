@@ -1,0 +1,10 @@
+sudo apt install python3-pip
+
+source ./activate
+
+pip install -r requirements.txt
+pip freeze > requirements.txt
+
+
+pip install django
+

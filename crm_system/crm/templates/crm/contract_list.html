@@ -1,0 +1,16 @@
+<!-- contract_list.html -->
+{% extends 'crm/base.html' %}
+
+{% block title %}Contract List{% endblock %}
+
+{% block content %}
+    <h2>Contract List</h2>
+    <ul>
+        {% for contract in contracts %}
+            <li><a href="{% url 'contract_detail' contract.pk %}">{{ contract.name }}</a></li>
+        {% empty %}
+            <li>No contracts available</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'contract_create' %}">Create New Contract</a>
+{% endblock %}

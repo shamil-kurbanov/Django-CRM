@@ -1,0 +1,17 @@
+<!-- templates/services_list.html -->
+{% extends 'crm/base.html' %}
+
+{% block title %}
+	Service List
+{% endblock %}
+
+{% block content %}
+    <h2>Service List</h2>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.name }}</li>
+        {% empty %}
+            <li>No services available</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,121 @@
+The CRM system should allow employees to:
+
+- Keep track of services offered by the company.
+- Launch and complete advertising campaigns.
+- Keep track of potential customers interested in specific advertising campaigns.
+- Transition customers from "potential" status to "active" status when drafting cooperation contracts.
+
+This CRM system should have several categories of users with specific roles:
+
+- Administrator: creates users and assigns roles.
+- Operator: creates records of potential clients.
+- Marketer: creates records of services provided and ongoing advertising campaigns.
+- Manager: works with potential clients, creates contracts, and transitions potential clients to active status.
+
+The CRM system should also calculate the statistics of the success of advertising campaigns conducted by the organization. The system needs to consider several factors:
+
+- The number of potential customers interested in the advertisement.
+- The number of customer transitions from potential to active.
+- Sales volumes per customer.
+
+Why This Task Is Important for the Client:
+The CRM system you develop will allow the client to efficiently manage the process of working with customers, track the effectiveness of advertising campaigns, and increase overall business productivity.
+
+Additionally, with CRM, the client will be able to systematize the work of employees from different cities and regions.
+
+----------------------------------------------------------------
+
+Main Application Functions:
+
+User authentication.
+Creation, editing, and viewing of provided services.
+Creation, editing, and viewing of advertising campaigns.
+Creation, editing, and viewing of potential clients.
+Creation, editing, and viewing of contracts for clients.
+Transition of potential clients to active status.
+Calculation and display of statistics on advertising campaigns: how many potential clients were attracted and how many of them transitioned to active status.
+
+Pages for Working with Services:
+Page displaying a list of active clients: each entry should have a unique identifier, for example, a name. Entries should be links to detailed pages. Buttons for deletion should be added next to them, and a general button for creating a new entry should be on the page.
+The detailed page should have an immutable form with data about the entry, as well as a button for editing and deleting the entry.
+The editing page should be pre-filled and available for editing.
+The creation page should have an empty form for filling in.
+
+Pages for Working with Advertising Campaigns:
+Similar to pages for working with services.
+
+Pages for Working with Potential Clients:
+Similar to pages for working with services.
+Next to each entry on the list page, there should be a link to transition a potential client to active. This allows the user to transition to the page for creating an active client.
+
+Pages for Working with Contracts:
+Similar to pages for working with services.
+
+Pages for Working with Active Clients:
+Page displaying a list of active clients: each entry should have a unique identifier, for example, a name. Entries should be links to detailed pages. Buttons for deletion should be added next to them.
+The detailed page should have an immutable form with data about the entry, as well as a button for editing and deleting the entry.
+The editing page should be pre-filled and available for editing.
+The creation page should have the potential client field pre-filled, while the others should be empty.
+
+User Roles:
+The system should have predefined user roles.
+
+Administrator can create, view, and edit users, assign roles and permissions. This functionality will be implemented in the Django administrative panel.
+Operator can create, view, and edit potential clients.
+Marketer can create, view, and edit provided services and advertising campaigns.
+Manager can create, view, and edit contracts, view potential clients, and transition them to active.
+All roles can view statistics on advertising campaigns.
+
+Creating a Service:
+The application accepts information about the service:
+
+Name.
+Description.
+Cost.
+
+Creating an Advertising Campaign:
+The application accepts:
+
+Name of the advertising campaign.
+Advertised service.
+Promotion channel.
+Advertising budget.
+
+Creating a Potential Client:
+The application accepts client data:
+
+Full name.
+Phone.
+Email.
+Advertising campaign from which they learned about the service.
+
+Creating a Contract:
+The application accepts contract information:
+
+Name.
+Provided service.
+Document file.
+Conclusion date.
+Validity period.
+Amount.
+
+Creating an Active Client:
+An active client can only be created from the list of potential clients.
+
+The application accepts:
+
+Data about the potential client.
+Data about the contract.
+
+Calculation of Statistics on Advertising Campaign Success:
+Statistics are calculated based on several criteria:
+
+Number of clients attracted by the advertising campaign.
+Number of clients transitioning from potential to active.
+Income from contracts vs. advertising expenses.
+
+Code Requirements:
+Users and roles should be created using the standard Django administrative interface.
+All other CRM system functions should be accessible outside the Django administrative interface.
+PostgreSQL should be used as the database management system (DBMS).
+Pylint should be connected to automatically check the code for compliance with style formatting. For more information on this, read the instructions for using Pylint.

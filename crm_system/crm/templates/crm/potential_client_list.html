@@ -8,7 +8,7 @@
     <h2>Potential Client List</h2>
     <ul>
         {% for potential_client in potential_clients %}
-            <li><a href="{% url 'potential_client_detail' potential_client.pk %}">{{ potential_client.name }}</a></li>
+            <li><a href="{% url 'crm:potential_client_detail' potential_client.pk %}">{{ potential_client.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

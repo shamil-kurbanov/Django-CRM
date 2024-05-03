@@ -173,7 +173,6 @@ def contract_create(request):
         form = ContractForm(request.POST)
         if form.is_valid():
             contract = form.save(commit=False)
-            # Assuming you're getting service_id from the form or somewhere else
             contract.save()
             return redirect('contract_list')
     else:
